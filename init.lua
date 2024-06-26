@@ -20,33 +20,29 @@
 =====================================================================
 =====================================================================
 
-TODO: read https://learnxinyminutes.com/docs/lua/
-TODO: read https://neovim.io/doc/user/lua-guide.html
-NOTE: :help lua-guide to reference lua
-NOTE: View the tutorial at anytime with :Tutor
-NOTE: <space>sh to [s]earch the [h]elp documentation
-NOTE: If you experience any errors while trying to install kickstart, run `:checkhealth` for more info.
+-- ]]
 
---]]
+-- === General Documentation === --
+--  See https://neovim.io/doc/user/lua-guide.html
+--  or  :help lua-guide to read in vim
+--
+--  See <space>sh to [s]earch the [h]elp documentation
+--  and :Tutor for a vim tutorial
 
--- [[ Options Sections ]]
-
--- See `:help mapleadert`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+-- === Section Global Options === --
+--  See :help mapleadert
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
--- Section Setting options
--- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
+-- === Section Setting Options === ---
+--  See :help vim.opt
+--  and :help option-list
 
 -- Make line numbers default
 vim.opt.number = true
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- Enable mouse mode. 'a' enables mouse mode in all modes
 vim.opt.mouse = 'a'
@@ -56,7 +52,7 @@ vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
+--  See :help clipboard
 vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
@@ -84,8 +80,8 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
+--  See :help list
+--  and :help listchars
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
