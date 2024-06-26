@@ -37,7 +37,6 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
--- TODO: Install nerd font
 vim.g.have_nerd_font = true
 
 -- Section Setting options
