@@ -29,14 +29,14 @@
 --  See <space>sh to [s]earch the [h]elp documentation
 --  and :Tutor for a vim tutorial
 
--- === Section Global Options === --
+-- === Section: Global Options === --
 --  See :help mapleadert
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.g.have_nerd_font = true
 
--- === Section Setting Options === ---
+-- === Section: Setting Options === ---
 --  See :help vim.opt
 --  and :help option-list
 
@@ -94,8 +94,8 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
+-- === Section: Basic Keymaps === --
+--  See :help vim.keymap.set()
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -130,8 +130,8 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
+-- === Section: asic Autocommands === --
+--  See :help lua-guide-autocommands
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -144,7 +144,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- [[ Install `lazy.nvim` plugin manager ]]
+-- Install `lazy.nvim` plugin manager
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
