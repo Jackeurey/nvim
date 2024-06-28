@@ -42,7 +42,7 @@ vim.g.have_nerd_font = true
 
 -- Make line numbers default
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 -- Enable mouse mode. 'a' enables mouse mode in all modes
 vim.opt.mouse = 'a'
@@ -810,7 +810,6 @@ require('lazy').setup({
     end,
   },
   require 'custom.plugins.harpoon2',
-  require 'custom.plugins.nvim-treesitter-context',
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
