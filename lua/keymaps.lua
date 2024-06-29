@@ -1,5 +1,5 @@
 --[[
-  NOTE: For more Documentation   
+  NOTE: For More Documentation   
   See :help vim.keymap.set()
 --]]
 
