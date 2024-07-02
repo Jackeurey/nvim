@@ -1,6 +1,7 @@
 --[[
 NOTE: For More Documentation
   See :help lua-guide-autocommands
+  and :help autocmd-events
 -- ]]
 
 local autocmds = {}
