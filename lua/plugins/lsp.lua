@@ -186,8 +186,8 @@ return {
         elixirls = {
           enable = true,
           settings = elixirls.settings {
-            dialyzerEnabled = false,
-            enableTestLenses = false,
+            dialyzerEnabled = true,
+            enableTestLenses = true,
           },
           on_attach = function(_, _)
             vim.keymap.set('n', '<space>fp', ':ElixirFromPipe<cr>', { buffer = true, noremap = true })
