@@ -190,9 +190,11 @@ return {
             enableTestLenses = true,
           },
           on_attach = function(_, _)
-            vim.keymap.set('n', '<space>fp', ':ElixirFromPipe<cr>', { buffer = true, noremap = true })
-            vim.keymap.set('n', '<space>tp', ':ElixirToPipe<cr>', { buffer = true, noremap = true })
-            vim.keymap.set('v', '<space>em', ':ElixirExpandMacro<cr>', { buffer = true, noremap = true })
+            --   vim.keymap.set('n', '<leader>fp', ':ElixirFromPipe<cr>', { buffer = true, noremap = true })
+            --   vim.keymap.set('n', '<leader>tp', ':ElixirToPipe<cr>', { buffer = true, noremap = true })
+            --   vim.keymap.set('v', '<leader>em', ':ElixirExpandMacro<cr>', { buffer = true, noremap = true })
+            --   vim.keymap.set('n', '<leader>rt', vim.lsp.codelens.run)
+            -- TODO: figure out what keybindings I want and what they should be
           end,
         },
       }
