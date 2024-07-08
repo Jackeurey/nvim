@@ -171,4 +171,20 @@ return {
     build = 'cd formatter && npm ci && npm run build',
     config = true,
   },
+  {
+    'NvChad/nvim-colorizer.lua',
+    opts = {
+      user_default_options = {
+        tailwind = true,
+        mode = 'virtualtext',
+        always_update = true,
+        filetypes = {
+          'html',
+          'css',
+          'javascript',
+          'elixir',
+        },
+      },
+    },
+  },
 }
