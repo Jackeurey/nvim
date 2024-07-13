@@ -14,7 +14,7 @@ return {
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
         ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
-        ['<leader>a'] = { name = 'H[a]rpoon', _ = 'which_key_ignore' },
+        ['<leader>a'] = { name = 'Gr[a]pple', _ = 'which_key_ignore' },
       }
       -- visual mode
       require('which-key').register({
@@ -23,74 +23,20 @@ return {
     end,
   },
 
-  { -- Project scoped file saver to keep important files a keystroke away
-    'theprimeagen/harpoon',
-    branch = 'harpoon2',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require('harpoon'):setup()
-    end,
+  {
+    'cbochs/grapple.nvim',
+    opts = {
+      scope = 'git', -- also try out "git_branch"
+    },
+    event = { 'BufReadPost', 'BufNewFile' },
+    cmd = 'Grapple',
     keys = {
-      {
-        '<leader>af',
-        function()
-          require('harpoon'):list():add()
-        end,
-        desc = 'Harpoon [F]ile',
-      },
-      {
-        '<leader>aF',
-        function()
-          require('harpoon'):list():remove()
-        end,
-        desc = '[F]ree File',
-      },
-      {
-        '<leader>aq',
-        function()
-          local harpoon = require 'harpoon'
-          harpoon.ui:toggle_quick_menu(harpoon:list())
-        end,
-        desc = 'Harpoon [Q]uick Menu',
-      },
-      {
-        '<leader>a1',
-        function()
-          require('harpoon'):list():select(1)
-        end,
-        desc = 'Harpoon to File [1]',
-      },
-      {
-        '<leader>a2',
-        function()
-          require('harpoon'):list():select(2)
-        end,
-        desc = 'Harpoon to File [2]',
-      },
-      {
-        '<leader>a3',
-        function()
-          require('harpoon'):list():select(3)
-        end,
-        desc = 'Harpoon to File [3]',
-      },
-      {
-        '<leader>a4',
-        function()
-          require('harpoon'):list():select(4)
-        end,
-        desc = 'Harpoon to File [4]',
-      },
-      {
-        '<leader>a5',
-        function()
-          require('harpoon'):list():select(5)
-        end,
-        desc = 'Harpoon to File [5]',
-      },
+      { '<leader>at', '<cmd>Grapple toggle<cr>', desc = 'Grapple toggle tag' },
+      { '<leader>aq', '<cmd>Grapple toggle_tags<cr>', desc = 'Grapple open tags window' },
+      { '<leader>an', '<cmd>Grapple cycle_tags next<cr>', desc = 'Grapple cycle next tag' },
+      { '<leader>ap', '<cmd>Grapple cycle_tags prev<cr>', desc = 'Grapple cycle previous tag' },
     },
   },
-
   { -- Neo-tree is a Neovim plugin to browse the file system
     'nvim-neo-tree/neo-tree.nvim',
     version = '*',
