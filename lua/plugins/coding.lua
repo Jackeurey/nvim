@@ -176,7 +176,7 @@ return {
     opts = {
       user_default_options = {
         tailwind = true,
-        mode = 'virtualtext',
+        mode = 'foreground',
         always_update = true,
         filetypes = {
           'html',
