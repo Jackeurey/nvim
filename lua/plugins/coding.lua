@@ -171,7 +171,7 @@ return {
     build = 'cd formatter && npm ci && npm run build',
     config = true,
   },
-  {
+  { -- See visually the color of various color formats.
     'NvChad/nvim-colorizer.lua',
     opts = {
       user_default_options = {
