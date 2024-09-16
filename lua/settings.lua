@@ -63,4 +63,7 @@ vim.opt.scrolloff = 10
 -- Sets highlight on search
 vim.opt.hlsearch = true
 
+vim.opt.shiftwidth = 0
+vim.opt.tabstop = 4
+
 return settings
