@@ -13,8 +13,6 @@ return {
       local wk = require 'which-key'
       wk.setup()
       wk.add {
-        { '<leader>`', group = '[`] Grapple' },
-        { '<leader>`_', hidden = true },
         { '<leader>g', group = '[G]it' },
         { '<leader>g_', hidden = true },
         { '<leader>s', group = '[S]earch' },
@@ -56,8 +54,8 @@ return {
     event = { 'BufReadPost', 'BufNewFile' },
     cmd = 'Grapple',
     keys = {
-      { '<leader>`t', '<cmd>Grapple toggle<cr>', desc = '[`] Grapple [T]ag' },
-      { '<leader>``', '<cmd>Grapple toggle_tags<cr>', desc = '[`] Grapple [`] Menu' },
+      { '<leader>m', '<cmd>Grapple toggle<cr>', desc = 'Grapple [M]ark' },
+      { '<leader>`', '<cmd>Grapple toggle_tags<cr>', desc = '[`] Grapple' },
       { ']`', '<cmd>Grapple cycle_tags next<cr>', desc = 'Grapple cycle next tag' },
       { '[`', '<cmd>Grapple cycle_tags prev<cr>', desc = 'Grapple cycle previous tag' },
     },
