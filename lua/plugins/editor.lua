@@ -141,6 +141,19 @@ return {
       end,
     },
   },
+  {
+    'NeogitOrg/neogit',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'sindrets/diffview.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
+    config = function()
+      local neogit = require 'neogit'
+      neogit.setup {}
+      vim.keymap.set('n', '<leader>gn', require('neogit').open, { desc = '[N]eogit' })
+    end,
+  },
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
