@@ -6,12 +6,9 @@ return {
     event = 'InsertEnter',
     config = function()
       local npairs = require 'nvim-autopairs'
-      -- TODO Fix rules to fit my work flow better
-      npairs.setup {}
-      npairs.remove_rule '('
-      npairs.remove_rule "'"
-      npairs.remove_rule '"'
-      npairs.remove_rule '['
+      npairs.setup {
+        enable_moveright = true,
+      }
       -- If you want to automatically add `(` after selecting a function or method
       -- local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
       -- local cmp = require 'cmp'
