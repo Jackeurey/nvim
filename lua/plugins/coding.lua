@@ -133,15 +133,6 @@ return {
       signs = vim.g.have_nerd_font,
     },
   },
-  { -- Sorts Tailwind classes on :TailwindSort
-    'laytan/tailwind-sorter.nvim',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'nvim-lua/plenary.nvim',
-    },
-    build = 'cd formatter && npm ci && npm run build',
-    config = true,
-  },
   { -- See visually the color of various color formats.
     'NvChad/nvim-colorizer.lua',
     opts = {
