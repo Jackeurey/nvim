@@ -8,6 +8,9 @@ return {
         'pyright',
       },
     },
+    automatic_enable = {
+      exclude = { 'stylua' },
+    },
     dependencies = {
       { 'williamboman/mason.nvim', config = true },
       'neovim/nvim-lspconfig',
@@ -18,7 +21,6 @@ return {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     opts = {
       ensure_installed = {
-        'stylua', -- lua formatter
         'debugpy', -- Python Debugger
         'autopep8', -- Python Formatter
       },
