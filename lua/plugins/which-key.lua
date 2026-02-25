@@ -1,20 +1,30 @@
 return {
   { -- Help see what keymaps are avaliable
-    "folke/which-key.nvim",
-    event = "VeryLazy",
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
     opts = {
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     },
+    config = function()
+      local wk = require 'which-key'
+      wk.add {
+        { '<leader>f', group = 'File' },
+        { '<leader>s', group = 'Search' },
+        { '<leader>g', group = 'Git' },
+        { 'ga', group = 'Lsp C[a]lls' },
+        { '<leader>S', group = 'Scratch' },
+      }
+    end,
     keys = {
       {
-        "<leader>?",
+        '<leader>?',
         function()
-          require("which-key").show({ global = false })
+          require('which-key').show { global = false }
         end,
-        desc = "Buffer Local Keymaps (which-key)",
+        desc = 'Buffer Local Keymaps (which-key)',
       },
     },
-  }
+  },
 }
