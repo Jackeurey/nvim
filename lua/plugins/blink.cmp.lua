@@ -1,27 +1,27 @@
 return {
   {
-    "saghen/blink.cmp",
+    'saghen/blink.cmp',
     dependencies = {
-      "folke/lazydev.nvim",
+      'folke/lazydev.nvim',
     },
     version = '1.*',
     opts = {
       sources = {
-        default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+        default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
         providers = {
           lazydev = {
-            name = "LazyDev",
-            module = "lazydev.integrations.blink",
+            name = 'LazyDev',
+            module = 'lazydev.integrations.blink',
             score_offset = 100,
           },
         },
       },
       completion = {
-        ghost_text = {enabled = true,},
+        ghost_text = { enabled = false },
       },
       signature = {
         enabled = true,
-        window = {show_documentation = false},
+        window = { show_documentation = false },
       },
     },
   },
