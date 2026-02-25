@@ -4,7 +4,8 @@ return {
     event = 'VeryLazy',
     opts = {
       modes = {
-        char = { enabled = false },
+        search = { enabled = true },
+        char = { enabled = true },
       },
     },
     keys = {
