@@ -20,4 +20,41 @@ return {
       require('nvim-treesitter.configs').setup(opts)
     end,
   },
+  { -- Textobjects for explicit selection and movement
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('nvim-treesitter-textobjects').setup {
+        move = {
+          enable = true,
+          set_jumps = true, -- Adds jumps to the jumplist (so you can use Ctrl-o to go back)
+        },
+      }
+      local move = require 'nvim-treesitter-textobjects.move'
+      local keymap = vim.keymap
+
+      -- Next Method
+      keymap.set({ 'n', 'x', 'o' }, ']m', function()
+        move.goto_next_start('@function.outer', 'textobjects')
+      end, { desc = 'Next Method' })
+      -- Previous Method
+      keymap.set({ 'n', 'x', 'o' }, '[m', function()
+        move.goto_previous_start('@function.outer', 'textobjects')
+      end, { desc = 'Previous Method' })
+    end,
+  },
+  { -- 1. Textsubjects for "smart" context-aware selection
+    'RRethy/nvim-treesitter-textsubjects',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('nvim-treesitter-textsubjects').configure {
+        prev_selection = ',', -- (Optional) Keymap to go back to the previous selection
+        keymaps = {
+          ['.'] = 'textsubjects-smart', -- Smart selection (expands outward)
+          [';'] = 'textsubjects-container-outer', -- Select outer container (class/function)
+          ['i;'] = 'textsubjects-container-inner', -- Select inner container (body)
+        },
+      }
+    end,
+  },
 }

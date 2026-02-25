@@ -16,6 +16,10 @@ return {
         { 'ga', group = 'Lsp C[a]lls' },
         { '<leader>S', group = 'Scratch' },
       }
+      wk.add {
+        mode = { 'v', 'o' },
+        { '.', desc = 'Smart textsubject selection' },
+      }
     end,
     keys = {
       {
