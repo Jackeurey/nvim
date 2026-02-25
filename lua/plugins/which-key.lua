@@ -15,6 +15,7 @@ return {
         { '<leader>g', group = 'Git' },
         { 'ga', group = 'Lsp C[a]lls' },
         { '<leader>S', group = 'Scratch' },
+        { '<leader>y', group = 'Yazi' },
       }
       wk.add {
         mode = { 'v', 'o' },

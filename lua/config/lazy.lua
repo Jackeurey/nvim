@@ -15,9 +15,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.env.PATH = vim.env.PATH .. ':' .. vim.fn.expand '~/.cargo/bin'
+
 -- Load Lazy
 require('lazy').setup {
   spec = {
-    { import = 'plugins'},
+    { import = 'plugins' },
   },
 }
