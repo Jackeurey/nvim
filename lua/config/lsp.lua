@@ -8,21 +8,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = ev.buf, silent = true }
 
     -- set keybinds
-    keymap.set('n', 'gR', function()
-      vim.lsp.buf.references { includeDeclaration = true }
-    end, opts)
 
-    opts.desc = 'Go to declaration'
-    keymap.set('n', 'gD', vim.lsp.buf.declaration, opts) -- go to declaration
-
-    opts.desc = 'Show LSP definition'
-    keymap.set('n', 'gd', vim.lsp.buf.definition, opts) -- show lsp definition
+    -- NOTE: Commenting out to see how I feel about the snack picker way of using this.
+    -- opts.desc = 'Go to declaration'
+    -- keymap.set('n', 'gD', vim.lsp.buf.declaration, opts) -- go to declaration
+    -- opts.desc = 'Show LSP definition'
+    -- keymap.set('n', 'gd', vim.lsp.buf.definition, opts) -- show lsp definition
 
     opts.desc = 'See available code actions'
-    keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+    keymap.set({ 'n', 'v' }, 'ga', vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
     opts.desc = 'Smart rename'
-    keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts) -- smart rename
+    keymap.set('n', 'gR', vim.lsp.buf.rename, opts) -- smart rename
 
     opts.desc = 'Show line diagnostics'
     keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts) -- show diagnostics for line
@@ -38,6 +35,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts) -- jump to next diagnostic in buffer
   end,
 })
+
+-- vim.lsp.inlay_hint.enable(true)
 
 local severity = vim.diagnostic.severity
 
