@@ -5,7 +5,7 @@ return {
     opts = {
       modes = {
         search = { enabled = true },
-        char = { enabled = true },
+        char = { enabled = true, jump_labels = true },
       },
     },
     keys = {
